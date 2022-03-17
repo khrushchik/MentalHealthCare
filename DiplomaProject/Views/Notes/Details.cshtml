@@ -1,0 +1,60 @@
+﻿@model DiplomaProject.Models.Note
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Note</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.noteDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.noteDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.plans)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.plans)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.plansDone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.plansDone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.thoughts)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.thoughts)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Mood)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Mood.id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Activity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Activity.id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
