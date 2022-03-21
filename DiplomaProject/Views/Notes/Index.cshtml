@@ -9,6 +9,17 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Пошук за датою: <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+            <input type="submit" value="Пошук" class="btn btn-primary" /> |
+            <a asp-action="Index" class="btn btn-secondary">Показати усі записи</a>
+        </p>
+    </div>
+</form>
+
 <div class="table-responsive">
 
     <table class="table">
@@ -69,9 +80,7 @@
                     @Html.DisplayFor(modelItem => item.Activity.activityName)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-secondary">Видалити запис</a>
                 </td>
             </tr>
             }

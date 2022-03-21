@@ -23,10 +23,19 @@ namespace DiplomaProject.Controllers
         }
 
         // GET: Notes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
-            var applicationDbContext = _context.Notes.Include(n => n.Activity).Include(n => n.Mood).Include(n => n.User);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["CurrentFilter"] = searchString;
+
+            //var applicationDbContext = _context.Notes.Include(n => n.Activity).Include(n => n.Mood).Include(n => n.User);
+            IQueryable<Note> applicationDbContext = _context.Notes.Include(n => n.Activity).Include(n => n.Mood).Include(n => n.User);
+
+            if (!(searchString==null))
+            {
+                applicationDbContext = applicationDbContext.Where(s => s.noteDate == Convert.ToDateTime(searchString));
+            }
+
+            return View(await applicationDbContext.AsNoTracking().ToListAsync());
         }
 
         // GET: Notes/Details/5

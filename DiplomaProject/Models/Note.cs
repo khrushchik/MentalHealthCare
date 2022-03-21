@@ -11,6 +11,7 @@ namespace DiplomaProject.Models
     {
         public int id { get; set; }
         [Display(Name = "Дата")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime noteDate { get; set; }
         [Display(Name = "Настрій")]
         public int moodId { get; set; }
