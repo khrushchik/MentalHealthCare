@@ -14,22 +14,22 @@ namespace DiplomaProject.ViewModel
         public string Email { get; set; }
 
         [Required]
-        [Display(Name = "Имя")]
+        [Display(Name = "Ім'я")]
         public string Name { get; set; }
 
         [Required]
-        [Display(Name = "Фамилия")]
+        [Display(Name = "Прізвище")]
         public string Surname { get; set; }
 
         [Required]
         [Display(Name = "Пароль")]
         [DataType(DataType.Password)]
-        [StringLength(16, ErrorMessage = "{0} должен иметь минимум {2} и максимум {1} символов.", MinimumLength = 5)]
+        [StringLength(16, ErrorMessage = "{0} повинен мати мінімум {2} и максимум {1} символів.", MinimumLength = 5)]
         public string Password { get; set; }
 
         [Required]
-        [Compare("Password", ErrorMessage = "Пароли не совпадают")]
-        [Display(Name = "Подтверждение пароля")]
+        [Compare("Password", ErrorMessage = "Паролі не співпадають")]
+        [Display(Name = "Підтверждення паролю")]
         [DataType(DataType.Password)]
         public string PasswordConfirm { get; set; }
     }

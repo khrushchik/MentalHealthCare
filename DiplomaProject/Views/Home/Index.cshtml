@@ -1,11 +1,16 @@
 ﻿@{
-    ViewData["Title"] = "Лабораторна робота з ІСтаТП 2020. Бібліотека";
+    ViewData["Title"] = "Головна";
 }
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> UserManager
 
 
 @if (User.Identity.IsAuthenticated)
 {
-    <p>@User.Identity.Name</p>
+    <p>
+        @User.Identity.Name
+        @UserManager.FindByNameAsync(UserManager.GetUserName(User)).Result.Name
+    </p>
 
     <form method="post" asp-controller="Account" asp-action="Logout">
         <input type="submit" value="Вихід" />

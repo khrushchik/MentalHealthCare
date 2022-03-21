@@ -180,3 +180,5 @@ D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Notes\Index.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Advices.cshtml.g.cs

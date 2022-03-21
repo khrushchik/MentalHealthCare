@@ -9,63 +9,72 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.noteDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.plans)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.plansDone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.thoughts)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mood)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Activity)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.noteDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plans)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.plansDone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.thoughts)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mood.moodPicture)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Activity.activityName)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.noteDate)
+                </th>
+                <th style="width:350px">
+                    @Html.DisplayNameFor(model => model.thoughts)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.plans)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.plansDone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mood)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Activity)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.noteDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.thoughts)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.plans)
+                </td>
+                <td>
+                    @if (item.plansDone == true)
+                    {
+                        <img class="img-thumbnail" src="http://s1.iconbird.com/ico/2013/12/517/w256h2561386955471success2.png" alt="Виконано" width="290" height="290" />
+                    }
+                    else
+                    {
+                        <img class="img-thumbnail" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/54475/cross-mark-emoji-clipart-md.png" alt="Не виконано" width="290" height="290" />
+                    }
+
+                </td>
+                <td>
+                    @*
+            @Html.DisplayFor(modelItem => item.Mood.moodPicture)
+                    *@
+                    <img class="img-thumbnail" src="@(item.Mood.moodPicture)" alt="@item.Mood.moodName" width="290" height="290" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Activity.activityName)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
