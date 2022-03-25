@@ -23,11 +23,15 @@ namespace DiplomaProject.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult AFUHelp()
         {
             return View();
         }
         public IActionResult Advices()
+        {
+            return View();
+        }
+        public IActionResult MentalHelp()
         {
             return View();
         }

@@ -17,6 +17,9 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.bg-yellow {
+    background-color: #153460;
+}
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
@@ -86,7 +89,7 @@ body {
 }
 
 footer {
-    background: #153460;
+    background: #DCB927;
     color: white;
 }
 
@@ -105,4 +108,14 @@ table {
 
 td {
     word-wrap: break-word;
+}
+
+.test div {
+    width: 300px;
+    display:inline-block;
+    padding-bottom:10px;
+}
+.test1 div{
+    display:inline-block;
+    width: 50%;
 }

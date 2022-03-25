@@ -1,14 +1,34 @@
 ﻿@model IEnumerable<DiplomaProject.Models.Note>
 
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Мої записи";
 }
 
-<h1>Index</h1>
+<h1 align="center">Мій довідник</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<div class="test">
+    <div>
+        <a asp-action="Create" class="btn btn-primary">Створити новий запис</a>
+    </div>
+    <div>
+        <a id="toggleLink" class="btn btn-primary" href="javascript:void(0);" onclick="viewdiv('chart1');" data-text-show="Статистика настроїв" data-text-hide="Статистика настроїв">Статистика настроїв</a>
+    </div>
+    <div>
+        <a id="toggleLink" class="btn btn-primary" href="javascript:void(0);" onclick="viewdiv('chart2');" data-text-show="Cтатистика активностей" data-text-hide="Cтатистика активностей">Cтатистика активностей</a>
+    </div>
+</div>
+<div class="row mt-5 mb-2" >
+    <div id="chart1" style="display:none;">
+
+    </div>
+
+
+    <div id="chart2" style="display:none;">
+
+    </div>
+</div>
+
 
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
@@ -49,41 +69,113 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.noteDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.thoughts)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.plans)
-                </td>
-                <td>
-                    @if (item.plansDone == true)
-                    {
-                        <img class="img-thumbnail" src="http://s1.iconbird.com/ico/2013/12/517/w256h2561386955471success2.png" alt="Виконано" width="290" height="290" />
-                    }
-                    else
-                    {
-                        <img class="img-thumbnail" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/54475/cross-mark-emoji-clipart-md.png" alt="Не виконано" width="290" height="290" />
-                    }
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.noteDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.thoughts)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.plans)
+                    </td>
+                    <td>
+                        @if (item.plansDone == true)
+                        {
+                            <img class="img-thumbnail" src="http://s1.iconbird.com/ico/2013/12/517/w256h2561386955471success2.png" alt="Виконано" width="290" height="290" />
+                        }
+                        else
+                        {
+                            <img class="img-thumbnail" src="https://creazilla-store.fra1.digitaloceanspaces.com/emojis/54475/cross-mark-emoji-clipart-md.png" alt="Не виконано" width="290" height="290" />
+                        }
 
-                </td>
-                <td>
-                    @*
-            @Html.DisplayFor(modelItem => item.Mood.moodPicture)
-                    *@
-                    <img class="img-thumbnail" src="@(item.Mood.moodPicture)" alt="@item.Mood.moodName" width="290" height="290" />
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Activity.activityName)
-                </td>
-                <td>
-                    <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-secondary">Видалити запис</a>
-                </td>
-            </tr>
+                    </td>
+                    <td>
+                        @*
+                            @Html.DisplayFor(modelItem => item.Mood.moodPicture)
+                        *@
+                        <img class="img-thumbnail" src="@(item.Mood.moodPicture)" alt="@item.Mood.moodName" width="290" height="290" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Activity.activityName)
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-secondary">Видалити запис</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
+    @* todo *@
+    <a asp-action="Index"
+       class="btn btn-outline-dark">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Назад
+    </a>
+
+
+    <a asp-action="Index"
+       class="btn btn-outline-dark">
+        Вперед
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
 </div>
+
+
+@section scripts{
+
+    <script>
+        function viewdiv(id) {
+            var el = document.getElementById(id);
+            var link = document.getElementById('toggleLink');
+            if (el.style.display == "block") {
+                el.style.display = "none";
+                link.innerText = link.getAttribute('data-text-hide');
+            } else {
+                el.style.display = "block";
+                link.innerText = link.getAttribute('data-text-show');
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript" src="https://gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            $.get('/api/Charts/JsonData', function (jsonData) {
+                data = google.visualization.arrayToDataTable(jsonData, false);
+                var option = {
+                    title: "Статистика настроїв за місяць",
+                    width: 400,
+                    height: 300
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chart1'));
+                chart.draw(data, option);
+            })
+        }
+    </script>
+
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            $.get('/api/Charts/JsonData1', function (jsonData1) {
+                data = google.visualization.arrayToDataTable(jsonData1, false);
+                var option = {
+                    title: "Статистика активностей за місяць",
+                    width: 400,
+                    height: 300
+                };
+                chart = new google.visualization.PieChart(document.getElementById('chart2'));
+                chart.draw(data, option);
+            })
+        }
+    </script>
+
+
+
+}

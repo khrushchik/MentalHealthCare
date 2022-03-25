@@ -13,7 +13,6 @@ D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Diplom
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\DiplomaProject.TagHelpers.output.cache
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\DiplomaProject.RazorCoreGenerate.cache
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
@@ -182,3 +181,5 @@ D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\Advices.cshtml.g.cs
+D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\MentalHelp.cshtml.g.cs
+D:\4 course\Diploma\DiplomaProject\DiplomaProject\obj\Debug\netcoreapp3.1\Razor\Views\Home\AFUHelp.cshtml.g.cs

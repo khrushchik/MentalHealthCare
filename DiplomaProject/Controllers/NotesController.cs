@@ -21,7 +21,6 @@ namespace DiplomaProject.Controllers
         {
             _context = context;
         }
-
         // GET: Notes
         public async Task<IActionResult> Index(string searchString)
         {
