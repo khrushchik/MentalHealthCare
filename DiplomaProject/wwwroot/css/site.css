@@ -17,6 +17,10 @@ a {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+.btn-dop {
+    color: #fff;
+    background-color: #DCB927;
+}
 .bg-yellow {
     background-color: #153460;
 }
@@ -42,6 +46,8 @@ body {
     flex-direction: column;
     background: #EEEEEE;
     font-family: 'Open Sans';
+    background: url(https://potokmedia.ru/wp-content/uploads/2020/09/Kak-pravilno-meditirovat-5-stupenei3.jpg) no-repeat;
+    background-size: 100%;
 }
 
 .border-top {

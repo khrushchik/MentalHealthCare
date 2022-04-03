@@ -4,20 +4,44 @@
 @using Microsoft.AspNetCore.Identity
 @inject UserManager<User> UserManager
 
+<div class="row justify-content-center" style="background-color: #EEEEEE; text-align: center; background-color: rgba(238, 238, 238, 0.7);">
 
-@if (User.Identity.IsAuthenticated)
-{
-    <p>
-        @User.Identity.Name
-        @UserManager.FindByNameAsync(UserManager.GetUserName(User)).Result.Name
-    </p>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="col-md-4">
 
-    <form method="post" asp-controller="Account" asp-action="Logout">
-        <input type="submit" value="Вихід" />
-    </form>
-}
-else
-{
-    <a asp-controller="Account" asp-action="Login">Вхід</a>
-    <a asp-controller="Account" asp-action="Register">Реєстація</a>
-}
+            <h2>
+                Вітаємо, @UserManager.FindByNameAsync(UserManager.GetUserName(User)).Result.Name!
+            </h2>
+            <div style="padding-bottom:30px">
+                <a asp-controller="Notes" class="btn btn-primary" asp-action="Index">
+                    Напишіть, як пройшов ваш день :)
+                </a>
+            </div>
+            <div style="padding-bottom:30px">
+                <a asp-controller="Home" class="btn btn-primary" asp-action="Advices">
+                    Поради щодо поганого настрою
+                </a>
+            </div>
+            <div style="padding-bottom:30px">
+                <a asp-controller="Home" class="btn btn-primary" asp-action="MentalHelp">
+                    Отримати психологічну допомогу
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-4">
+            <div style="padding-bottom:30px">
+
+                <a asp-controller="Account" class="btn btn-dop" asp-action="Login">Вхід</a>
+            </div>
+            <div style="padding-bottom:30px">
+
+                <a asp-controller="Account" class="btn btn-dop" asp-action="Register">Реєстація</a>
+            </div>
+        </div>
+
+    }
+</div>
