@@ -4,10 +4,14 @@
 @{
     ViewData["Title"] = "Мої записи";
 }
-    <div class="container" style="background: #ffffff">
+    <div class="container" style="background: #EEEEEE">
 
         <h1 align="center">Мій довідник</h1>
-
+        @{ if (TempData["notice"] != null)
+            {
+                <script>alert('Якщо Вам погано - негайно зверніться до психолога!')</script>
+            }
+        }
         <div class="test">
             <div>
                 <a asp-action="Create" class="btn btn-primary">Створити новий запис</a>
@@ -49,7 +53,7 @@
                         <th>
                             @Html.DisplayNameFor(model => model.noteDate)
                         </th>
-                        <th style="width:350px">
+                        <th @*style="width:350px"*@>
                             @Html.DisplayNameFor(model => model.thoughts)
                         </th>
                         <th>
@@ -75,7 +79,8 @@
                                 @Html.DisplayFor(modelItem => item.noteDate)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.thoughts)
+                                @*@Html.DisplayFor(modelItem => item.thoughts)*@
+                                <a asp-action="Details" asp-route-id="@item.id" class="btn btn-primary">Детальніше</a>
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.plans)
@@ -122,7 +127,7 @@
             </a>
         </div>
 
-        </div>
+    </div>
         @section scripts{
 
             <script>

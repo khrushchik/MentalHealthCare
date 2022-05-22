@@ -76,7 +76,18 @@ namespace DiplomaProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                List<string> BanWords = new List<string>() {"померти","суїцид","сдохнути","повіситись","суицид","умереть" };
+                
                 _context.Add(note);
+                foreach (string word in BanWords)
+                {
+                    if (note.thoughts.Contains(word))
+                    {
+                        TempData["notice"] = "Якщо Вам погано, то негайно зверніться до лікаря!";
+                        await _context.SaveChangesAsync();
+                        return Redirect("~/Home/MentalHelp");
+                    }
+                }
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }

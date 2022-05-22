@@ -3,32 +3,36 @@
     ViewData["Title"] = "Психологічна допомога";
 }
 
-<div class="container" style="background: #ffffff">
+    <div class="container" style="background: #EEEEEE">
+        @{ if (TempData["notice"] != null)
+            {
+                <script>alert('Якщо Вам погано - негайно зверніться до психолога!')</script>
+            }
+        }
+        <h1>
+            <b>
+                Психологічна допомога під час війни
+            </b>
+        </h1>
 
-    <h1>
-        <b>
-            Психологічна допомога під час війни
-        </b>
-    </h1>
+        <div style="margin-bottom:10px; margin-top:10px">
+            <img width="758" height="426" src="https://i.ibb.co/0hhCR7F/psyhologichna-dopomoga-pid-chas-vijny-758x426.jpg" sizes="(max-width: 758px) 100vw, 758px">
+        </div>
 
-    <div style="margin-bottom:10px; margin-top:10px">
-        <img width="758" height="426" src="https://i.ibb.co/0hhCR7F/psyhologichna-dopomoga-pid-chas-vijny-758x426.jpg" sizes="(max-width: 758px) 100vw, 758px" >    
+        <div>
+            <p>
+                У Києві працює телефон довіри:<a href="tel:0800501212 ">0800501212 </a> – цілодобово, безкоштовно з мобільного.
+            </p>
+            <p>На сайті можна знайти контакти психологів: <a href="https://viyna.net/">https://viyna.net/</a></p>
+            <p>Поліцейські психологи створили&nbsp;<a href="https://t.me/obiymu">Telegram-канал «Психологічна підтримка»</a>&nbsp;з корисними постами та базовими рекомендаціями, що допоможуть розвантажити нервову систему. А також запустили чат-бот&nbsp;<a href="https://t.me/polltavasupportbot">@@polltavasupportbot</a>&nbsp;(посилання також є на каналі) для зворотного зв’язку психолога з клієнтом.</p>
+            <p>Канал психологічної підтримки «Перемога»: <a href="https://cutt.ly/7SpRymC">https://cutt.ly/7SpRymC</a></p>
+            <p>Хаб стійкості, щоб підтримувати одне одного: <a href="https://resiliencehub.com.ua/">https://resiliencehub.com.ua</a></p>
+            <p>Безкоштовна інтернет-платформа психологічної допомоги «Розкажи мені» Institute of Cognitive Modeling: <a href="https://tellme.com.ua/?fbclid=IwAR1-5WSNtASTWqFR4VFQD0Dpe9whty-xFfYCVPODs_of5EhVrV7lZ91Bikk" target="_blank" rel="noreferrer noopener">https://tellme.com.ua/</a>. Проект реалізується за підтримки&nbsp;<a href="https://www.facebook.com/president.gov.ua" target="_blank" rel="noreferrer noopener">Офісу Президента України</a>,&nbsp;<a href="https://www.facebook.com/moz.ukr" target="_blank" rel="noreferrer noopener">Міністерство охорони здоров’я України</a>&nbsp;та Інституту когнітивного моделювання.</p>
+            <p>Команда Інституту когнітивного моделювання у співпраці з кафедрою медичної психології, психосоматичної медицини та психотерапії Національний медичний університет імені О.О. Богомольця&nbsp; та фахівцями проекту «Друг» розробила бот&nbsp;<a href="https://t.me/friend_first_aid_bot?fbclid=IwAR1YoYmlFIW95H9jpQrArY4iKXmYHqBtJLvv58I_0Zy7a_I4tq0A_K5PiV8" target="_blank" rel="noreferrer noopener">https://t.me/friend_first_aid_bot</a>&nbsp;першої психологічної допомоги. Він стане в пригоді у перші години після травматичної події.&nbsp;Також бот містить рекомендації щодо збереження психологічного здоров’я.</p>
+            <p>Безкоштовна психологічна допомога фундації «ВАРТОЖИТИ» &nbsp;5522 (колл-центр) &nbsp;<a href="https://cutt.ly/fSpUtze">https://cutt.ly/fSpUtze</a></p>
+            <p>Українська спілка психотерапевтів започаткувала сайт безкоштовної психологічної підтримки «УкрЄдність»: <a href="https://cutt.ly/JSpRb2Y">https://cutt.ly/JSpRb2Y</a> &nbsp;</p>
+            <p>Для отримання соціально-психологічної допомоги від Інституту когнітивного моделювання звертайтеся: info@cognitive.com.ua</p>
+            <p>Більше сервісів психологічної допомоги – за посиланням: &nbsp;<a href="https://cutt.ly/wSpIoqt">https://cutt.ly/wSpIoqt</a></p>
+        </div>
     </div>
-
-    <div>
-        <p>
-            У Києві працює телефон довіри:<a href="tel:0800501212 ">0800501212 </a> – цілодобово, безкоштовно з мобільного.
-        </p>
-        <p>На сайті можна знайти контакти психологів: <a href="https://viyna.net/">https://viyna.net/</a></p>
-        <p>Поліцейські психологи створили&nbsp;<a href="https://t.me/obiymu">Telegram-канал «Психологічна підтримка»</a>&nbsp;з корисними постами та базовими рекомендаціями, що допоможуть розвантажити нервову систему. А також запустили чат-бот&nbsp;<a href="https://t.me/polltavasupportbot">@@polltavasupportbot</a>&nbsp;(посилання також є на каналі) для зворотного зв’язку психолога з клієнтом.</p>
-        <p>Канал психологічної підтримки «Перемога»: <a href="https://cutt.ly/7SpRymC">https://cutt.ly/7SpRymC</a></p>
-        <p>Хаб стійкості, щоб підтримувати одне одного: <a href="https://resiliencehub.com.ua/">https://resiliencehub.com.ua</a></p>
-        <p>Безкоштовна інтернет-платформа психологічної допомоги «Розкажи мені» Institute of Cognitive Modeling: <a href="https://tellme.com.ua/?fbclid=IwAR1-5WSNtASTWqFR4VFQD0Dpe9whty-xFfYCVPODs_of5EhVrV7lZ91Bikk" target="_blank" rel="noreferrer noopener">https://tellme.com.ua/</a>. Проект реалізується за підтримки&nbsp;<a href="https://www.facebook.com/president.gov.ua" target="_blank" rel="noreferrer noopener">Офісу Президента України</a>,&nbsp;<a href="https://www.facebook.com/moz.ukr" target="_blank" rel="noreferrer noopener">Міністерство охорони здоров’я України</a>&nbsp;та Інституту когнітивного моделювання.</p>
-        <p>Команда Інституту когнітивного моделювання у співпраці з кафедрою медичної психології, психосоматичної медицини та психотерапії Національний медичний університет імені О.О. Богомольця&nbsp; та фахівцями проекту «Друг» розробила бот&nbsp;<a href="https://t.me/friend_first_aid_bot?fbclid=IwAR1YoYmlFIW95H9jpQrArY4iKXmYHqBtJLvv58I_0Zy7a_I4tq0A_K5PiV8" target="_blank" rel="noreferrer noopener">https://t.me/friend_first_aid_bot</a>&nbsp;першої психологічної допомоги. Він стане в пригоді у перші години після травматичної події.&nbsp;Також бот містить рекомендації щодо збереження психологічного здоров’я.</p>
-        <p>Безкоштовна психологічна допомога фундації «ВАРТОЖИТИ» &nbsp;5522 (колл-центр) &nbsp;<a href="https://cutt.ly/fSpUtze">https://cutt.ly/fSpUtze</a></p>
-        <p>Українська спілка психотерапевтів започаткувала сайт безкоштовної психологічної підтримки «УкрЄдність»: <a href="https://cutt.ly/JSpRb2Y">https://cutt.ly/JSpRb2Y</a> &nbsp;</p>
-        <p>Для отримання соціально-психологічної допомоги від Інституту когнітивного моделювання звертайтеся: info@cognitive.com.ua</p>
-        <p>Більше сервісів психологічної допомоги – за посиланням: &nbsp;<a href="https://cutt.ly/wSpIoqt">https://cutt.ly/wSpIoqt</a></p>
-    </div>
-</div>
 
